@@ -12,7 +12,6 @@ func main() {
 	fmt.Println(testSquare.End())
 	fmt.Println(testSquare.Area())
 	fmt.Println(testSquare.Perimeter())
-	fmt.Println()
 	fmt.Println(testSquare2)
 	fmt.Println(testSquare2.End())
 	fmt.Println(testSquare2.Area())
@@ -29,10 +28,12 @@ type Square struct {
 	a     uint
 }
 
+// stringer interface
 func (s Square) String() string {
 	return fmt.Sprintf("obgect type: %T\nstart point: (%v, %v)\nside length: %v\n", s, s.start.x, s.start.y, s.a)
 }
 
+// NewSquare  constructor function
 func NewSquare(x, y int, a uint) Square {
 	return Square{Point{x, y}, a}
 }
